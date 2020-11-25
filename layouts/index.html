@@ -17,6 +17,12 @@
 
             <!-- Super sweet Hero body title -->
             <div class="hero-body">
+			<!-- If a background video is to be rendered, load it before the main content -->
+			{{ if isset .Params "backgroundvideo" }}
+			<video preload="auto" autoplay="true" loop="true" class="html-video background" >
+				<source src="/home/{{ .Params.backgroundvideo }}" type="video/mp4" }}="">
+			</video>
+			{{ end }}
                 <div class="container has-text-centered">
                     <!-- Title and tagline -->
                     <h1 class="bold-title {{ if or (.Site.Params.fadeIn | default true) .Site.Params.fadeInIndex }}fade-in one{{ end }}">
