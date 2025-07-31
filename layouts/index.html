@@ -20,7 +20,7 @@
             <div class="hero-body">
             <!-- If a background video is to be rendered, load it before the main content -->
             {{ if isset .Params "backgroundvideo" }}
-            <video preload="auto" autoplay="true" loop="true" class="html-video background" >
+            <video autoplay muted loop="true" class="html-video background" >
                 {{ with .Page.Resources.Match (printf "%s.*" .Params.backgroundvideo) }}
                     {{ range . }}
                         <source src='{{ .RelPermalink }}' type="{{ .MediaType }}" }}="">
